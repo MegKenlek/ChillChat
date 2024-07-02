@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChillChat</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Bejelentkezési panel -->
+    <div class="login-panel">
+        <h2>Belépés</h2>
+        <form id="login-form">
+            <label for="login-username">Felhasználónév:</label>
+            <input type="text" id="login-username" name="login-username" required>
+            <button type="submit">Belépés</button>
+        </form>
+    </div>
+
+    <!-- Regisztrációs panel -->
+    <div class="register-panel">
+        <h2>Regisztráció</h2>
+        <form id="registration-form">
+            <label for="register-username">Felhasználónév:</label>
+            <input type="text" id="register-username" name="register-username" required>
+            <button type="submit">Regisztráció</button>
+        </form>
+    </div>
+
+    <!-- Chat panel (alapvetően rejtve) -->
+    <div class="chat-panel" style="display: none;">
+        <div class="chat-header">
+            <h2>ChillChat</h2>
+            <button id="logout-btn">Kijelentkezés</button>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <!-- Itt jelennek meg az üzenetek -->
+        </div>
+        <div class="chat-input">
+            <input type="text" id="message-input" placeholder="Írj egy üzenetet...">
+            <button onclick="sendMessage()">Küldés</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
