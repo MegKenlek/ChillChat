@@ -1,0 +1,67 @@
+function registerUser() {
+    const username = document.getElementById('username').value;
+    if (!username) {
+        alert('Kérlek, adj meg egy felhasználónevet!');
+        return;
+    }
+
+    // Simulált adatok generálása
+    const userProfile = generateUserProfile(username);
+
+    displayUserProfile(userProfile);
+}
+
+function generateUserProfile(username) {
+    return {
+        name: username,
+        level: Math.floor(Math.random() * 10) + 1,
+        xp: Math.floor(Math.random() * 1000),
+        chillPoints: Math.floor(Math.random() * 500),
+        availableUsers: Math.floor(Math.random() * 100),
+        lastSeen: getRandomTimeAgo(),
+        registrationDate: getRandomRegistrationDate(),
+        friends: Math.floor(Math.random() * 50),
+        age: Math.floor(Math.random() * 50) + 18,
+        gender: Math.random() > 0.5 ? 'Férfi' : 'Nő',
+        relationshipStatus: getRandomRelationshipStatus(),
+    };
+}
+
+function displayUserProfile(profile) {
+    document.getElementById('profile-name').textContent = profile.name;
+    document.getElementById('level').textContent = profile.level;
+    document.getElementById('xp').textContent = profile.xp;
+    document.getElementById('chill-points').textContent = profile.chillPoints;
+    document.getElementById('available-users').textContent = profile.availableUsers;
+    document.getElementById('last-seen').textContent = profile.lastSeen;
+    document.getElementById('registration-date').textContent = profile.registrationDate;
+    document.getElementById('friends').textContent = profile.friends;
+    document.getElementById('age').textContent = profile.age;
+    document.getElementById('gender').textContent = profile.gender;
+    document.getElementById('relationship-status').textContent = profile.relationshipStatus;
+
+    openProfileModal();
+}
+
+function openProfile() {
+    document.getElementById('profileModal').style.display = 'block';
+}
+
+function closeProfile() {
+    document.getElementById('profileModal').style.display = 'none';
+}
+
+function getRandomTimeAgo() {
+    const minutesAgo = Math.floor(Math.random() * 60);
+    return `${minutesAgo} perce`;
+}
+
+function getRandomRegistrationDate() {
+    const monthsAgo = Math.floor(Math.random() * 12);
+    return new Date(new Date().setMonth(new Date().getMonth() - monthsAgo)).toLocaleDateString();
+}
+
+function getRandomRelationshipStatus() {
+    const statuses = ['Heteroszexuális', 'Házas', 'Egyedülálló', 'Nem keres senkit'];
+    return statuses[Math.floor(Math.random() * statuses.length)];
+}

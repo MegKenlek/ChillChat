@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChillChat</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div id="header-content">
+            <h1>ChillChat</h1>
+            <div id="register">
+                <input type="text" id="username" placeholder="Felhasználónév">
+                <button onclick="registerUser()">Regisztráció</button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div id="profile">
+            <button id="openProfileButton" onclick="openProfile()">Profil megnyitása</button>
+            <div id="profileModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeProfile()">&times;</span>
+                    <h2>Profil</h2>
+                    <img id="profile-pic" src="default-profile.png" alt="Profil kép">
+                    <p>Név: <span id="profile-name">-</span></p>
+                    <p>Szint: <span id="level">-</span></p>
+                    <p>XP: <span id="xp">-</span></p>
+                    <p>Chill pontok: <span id="chill-points">-</span></p>
+                    <p>Elérhető emberek: <span id="available-users">-</span></p>
+                    <p>Utoljára elérhető: <span id="last-seen">-</span></p>
+                    <p>Regisztrált: <span id="registration-date">-</span></p>
+                    <p>Barátok: <span id="friends">-</span></p>
+                    <p>Életkor: <span id="age">-</span></p>
+                    <p>Nem: <span id="gender">-</span></p>
+                    <p>Kapcsolati státusz: <span id="relationship-status">-</span></p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="scripts.js"></script>
+</body>
+</html>
